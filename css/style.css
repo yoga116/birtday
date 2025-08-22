@@ -1,0 +1,92 @@
+/* Canvas untuk Confetti & Kembang Api */
+#confettiCanvas, #fireworksCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Style untuk Surat Cinta Pop-up */
+.hidden-message {
+  display: none;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.show-message {
+  display: flex !important;
+  transform: scale(1);
+  opacity: 1;
+}
+.animate-bounceIn {
+  animation: bounceIn 0.7s ease;
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Efek Kursor untuk Teks yang Diketik */
+.typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+  color: #db2777; /* pink-600 */
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Style untuk Galeri Foto Slider (DIPERBAIKI) */
+.slider {
+  width: 90%;
+  max-width: 500px;
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #000;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 15s infinite ease-in-out;
+}
+
+.slides img {
+  width: calc(100% / 3);
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes slide {
+  0%, 25% { transform: translateX(0%); }
+  33.3%, 58.3% { transform: translateX(-33.33%); }
+  66.6%, 91.6% { transform: translateX(-66.66%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Style untuk Hati yang Jatuh */
+#heartsContainer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  animation: fall 6s linear infinite;
+  user-select: none;
+}
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0); }
+  100% { transform: translateY(110vh) rotate(360deg); }
+}
